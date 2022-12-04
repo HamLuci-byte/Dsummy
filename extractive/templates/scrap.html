@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section class="site-section site-blocks-cover bg-light" id="contact-section">
+    <div class="container">        
+      <div class="row">
+        <div class="col-md-12 mb-10">  
+            
+            
+            <form class="p-5 bg-white" action="." method="POST">{% csrf_token %}            
+                <h2 class="h4 text-black mb-5">ENTER URL</h2>                      
+                <div class="row form-group">
+                    <div class="col-md-6 mb-3 mb-md-0">
+    
+                      <input type="text" name="url" id="url" class="form-control" placeholder="ENTER URL">
+                    </div>
+                  </div>
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <input type="submit" value="SUBMIT" class="btn btn-primary btn-md text-white">
+                  </div>
+                </div>
+            </form>
+        </div>          
+      </div>
+    </div>
+</section>
+
+
+
+<section class="site-section site-blocks-cover bg-light" id="contact-section">
+    <div class="container">        
+      <div class="row">
+        <div class="col-md-12 mb-10">
+
+            <form class="p-5 bg-white" action="" method="POST">{% csrf_token %}                     
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <textarea name="data" id="data" cols="30" rows="10" class="form-control" placeholder="URL DATA">{{data}}</textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                      <input type="submit" value="SUBMIT" class="btn btn-primary btn-md text-white">
+                    </div>
+                </div>
+            
+            </form>  
+                     
+        </div>          
+      </div>
+    </div>
+</section>
+
+{% endblock %}

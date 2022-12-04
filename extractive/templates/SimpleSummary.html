@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<section class="site-section site-blocks-cover bg-light" id="contact-section">
+    <div class="container">        
+      <div class="row">
+        <div class="col-md-12 mb-10">         
+          <form class="p-5 bg-white" action="." method="POST">{% csrf_token %}            
+            <h2 class="h5 text-black mb-5">SUMMARY</h2>
+            {% if percent >= 1 %}
+            <label class="text-black" for="fname">Percent Of Information Retained : {{percent}}</label>          
+            {% else %}
+            {% endif %}
+            <div class="row form-group">
+              <div class="col-md-12">
+                <textarea cols="30" rows="10" class="form-control" placeholder="RESULT" id="myInput">{{result}}{{urlresult}}</textarea>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <button onclick="myFunction()" class="btn btn-primary btn-md text-white">Copy text</button>
+              </div>
+            </div>
+            
+            
+          </form>
+          
+        </div>          
+      </div>
+    </div>
+  </section>
+  <script>
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    }
+    </script>
+
+
+{% endblock %}

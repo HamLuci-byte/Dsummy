@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<body>
+<br>
+
+
+
+
+<section class="site-section site-blocks-cover bg-light" id="contact-section">
+    <div class="container">        
+      <div class="row">
+        <div class="col-md-12 mb-10">         
+          <form class="p-5 bg-white" action="." method="POST">{% csrf_token %}            
+            <h2 class="h4 text-black mb-5">ENTER TEXT</h2>          
+            <div class="row form-group">
+              <div class="col-md-12">
+                <textarea name="text" id="text" cols="30" rows="10" class="form-control" placeholder="ENTER TEXT"></textarea>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="SUBMIT" class="btn btn-primary btn-md text-white">
+              </div>
+            </div>
+          </form>
+          
+        </div>          
+      </div>
+    </div>
+</section>
+
+
+
+
+<section class="site-section site-blocks-cover bg-light" id="contact-section">
+    <div class="container">
+        
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">TF-IDF</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu1">TEXT-RANK</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">FREQUENCY</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#menu3">GENSIM</a>
+            </li>
+        </ul>
+      
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div id="home" class="container-fluid tab-pane active"><br>
+              <div class="container-fluid">        
+                  <div class="row">
+                    <div class="col-md-12 mb-10">         
+                      <form class="p-5 bg-white">           
+                        <h2 class="h4 text-black mb-5">TF-IDF SUMMARY</h2>          
+                        <div class="row form-group">
+                          <div class="col-md-12">
+                            <textarea cols="30" rows="10" class="form-control" placeholder="TF-IDF RESULT" disabled>{{tfresult}}</textarea>
+                          </div>
+                        </div>
+                      </form>            
+                    </div>          
+                  </div>
+              </div>
+          </div>
+          <div id="menu1" class="container tab-pane fade"><br>
+            <div class="container-fluid">        
+                <div class="row">
+                  <div class="col-md-12 mb-10">         
+                    <form class="p-5 bg-white" >          
+                      <h2 class="h4 text-black mb-5">TEXT-RANK SUMMARY</h2>          
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <textarea cols="30" rows="10" class="form-control" placeholder="TEXT-RANK RESULT" disabled>{{trresult}}</textarea>
+                        </div>
+                      </div>
+                    </form>            
+                  </div>          
+                </div>
+            </div>
+          </div>
+          
+          <div id="menu2" class="container tab-pane fade"><br>
+            <div class="container-fluid">        
+                <div class="row">
+                  <div class="col-md-12 mb-10">         
+                    <form class="p-5 bg-white" >          
+                      <h2 class="h4 text-black mb-5">W-FREQUENY SUMMARY</h2>          
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <textarea cols="30" rows="10" class="form-control" placeholder="W-FREQUENY RESULT" disabled>{{nltkresult}}</textarea>
+                        </div>
+                      </div>
+                    </form>            
+                  </div>          
+                </div>
+            </div>
+          </div>
+          <div id="menu3" class="container tab-pane fade"><br>
+            <div class="container-fluid">        
+                <div class="row">
+                  <div class="col-md-12 mb-10">         
+                    <form class="p-5 bg-white">            
+                      <h2 class="h4 text-black mb-5">GENSIM SUMMARY</h2>          
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <textarea cols="30" rows="10" class="form-control" placeholder="GENSIM RESULT" disabled>{{genresult}}</textarea>
+                        </div>
+                      </div>
+                    </form>            
+                  </div>          
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
